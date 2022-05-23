@@ -34,3 +34,6 @@ protoc --go_out=plugins=grpc:. sub.proto
 ### TODO
 
 - [ ]  后面有时间的话，计划录一节视频来讲解一下自己的理解
+
+### 参考项目
+- https://www.bilibili.com/video/BV1Np4y1x7JB
