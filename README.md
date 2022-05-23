@@ -4,6 +4,7 @@
 本项目设计的三个项目地址，将这三个项目放到同一层级目录就行
 - https://github.com/mohuani/grpc-go-add
 - https://github.com/mohuani/grpc-go-sub
+- https://github.com/mohuani/add-sub-api
 
 
 ### 编写 proto 文件
@@ -27,3 +28,9 @@ protoc --go_out=plugins=grpc:. sub.proto
 - 调用 grpc service 的具体 方法
 - 接收 Rpc Response
   
+
+---
+
+### TODO
+
+- [ ]  后面有时间的话，计划录一节视频来讲解一下自己的理解
