@@ -4,12 +4,35 @@ import (
 	"add-sub-api/mygrpc"
 	"context"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 )
 
 func main() {
-	createGrpcAddClient()
-	createGrpcSubClient()
+
+	engine := gin.Default()
+	gin.SetMode(gin.DebugMode)
+	engine.GET("/createGrpcAddClient", func(c *gin.Context) {
+		createGrpcAddClient()
+		c.JSON(200, gin.H{
+			"message": true,
+		})
+	})
+	engine.GET("/createGrpcSubClient", func(c *gin.Context) {
+		createGrpcSubClient()
+		c.JSON(200, gin.H{
+			"message": true,
+		})
+	})
+	engine.Run(":8080")
+
+	//http.HandleFunc("/createGrpcAddClient", func(writer http.ResponseWriter, request *http.Request) {
+	//	createGrpcAddClient()
+	//})
+	//http.HandleFunc("/createGrpcSubClient", func(writer http.ResponseWriter, request *http.Request) {
+	//	createGrpcSubClient()
+	//})
+	//http.ListenAndServe(":8080", nil)
 }
 
 func createGrpcAddClient() {
@@ -29,7 +52,6 @@ func createGrpcAddClient() {
 	addReply, _ := addServiceClient.Add(context.Background(), &addRequest)
 
 	fmt.Printf("addReply: %s\n", addReply)
-
 }
 
 func createGrpcSubClient() {
