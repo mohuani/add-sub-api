@@ -64,6 +64,6 @@ protoc --go_out=plugins=grpc:. sub.proto
 ### TODO
 
 - [ ]  后面有时间的话，计划录一节视频来讲解一下自己的理解
-- [ ]  支持 http访问
+- [x]  支持 http访问
 - [ ]  支持 swagger 文档
 
