@@ -58,6 +58,14 @@ protoc --go_out=plugins=grpc:. sub.proto
 - 调用 grpc service 的具体 方法
 - 接收 rpc Response
   
+### 调用
+使用 PostMan 调用 
+
+```http request
+GET http://127.0.0.1:8080/createGrpcAddClient
+
+GET http://127.0.0.1:8080/createGrpcSubClient
+```
 
 ---
 
